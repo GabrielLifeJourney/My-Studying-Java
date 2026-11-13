@@ -1,0 +1,91 @@
+- **JShell - The Java Shell Tool**
+
+anotação do meu notion
+
+    ### Objetivo
+
+    Conhecer o JShell, uma ferramenta interativa do JDK que permite testar instruções Java diretamente no terminal, sem criar um arquivo `.java` para cada experimento.
+
+    ### 1. O que é JShell?
+
+    JShell é um ambiente REPL (*Read-Evaluate-Print Loop*): ele lê uma instrução, avalia o código e mostra o resultado. Você pode executar expressões, declarar variáveis e métodos e testar ideias em pequenos trechos (*snippets*).
+
+    **Analogia:** pense no JShell como um rascunho interativo. Em vez de criar um projeto e executar um programa inteiro a cada teste, você digita uma instrução e vê o resultado imediatamente.
+
+    ### 2. Iniciando o JShell
+
+    Abra o terminal e execute:
+
+    ```bash
+    jshell
+    ```
+
+    O prompt muda para `jshell>`, indicando que a ferramenta está pronta para receber instruções.
+
+    ### 3. Primeiro teste
+
+    Digite uma instrução por vez:
+
+    ```java
+    String nome = "Gabriel";
+    int idade = 23;
+    System.out.println(nome);
+    System.out.println(idade);
+    ```
+
+    O JShell avalia cada trecho assim que você o envia. Variáveis declaradas continuam disponíveis durante a sessão, até serem redefinidas ou a sessão ser encerrada/resetada.
+
+    Você também pode testar uma expressão diretamente:
+
+    ```java
+    10 + 5
+    ```
+
+    ### 4. Comandos úteis do JShell
+
+    Os comandos próprios do JShell começam com `/`.
+
+    | Comando | Função |
+    | --- | --- |
+    | `/help` | Exibe a ajuda e os comandos disponíveis. |
+    | `/list` | Lista os trechos de código da sessão. |
+    | `/vars` | Lista as variáveis declaradas. |
+    | `/methods` | Lista os métodos definidos. |
+    | `/edit` | Abre o editor para editar trechos da sessão. |
+    | `/reset` | Reinicia a sessão e remove as definições atuais. |
+    | `/save arquivo.jsh` | Salva os trechos da sessão em um arquivo. |
+    | `/exit` | Encerra o JShell. |
+
+    ### 5. JShell ou arquivo `.java`?
+
+    | JShell | Arquivo `.java` |
+    | --- | --- |
+    | Ideal para experimentar e aprender. | Ideal para construir um programa organizado e reutilizável. |
+    | Executa trechos interativamente. | Reúne o código em arquivos de um programa. |
+    | Mostra resultados durante a sessão. | É executado pelo lançador Java, por exemplo `java NomeDoArquivo.java` quando aplicável. |
+
+    **Guarde:** JShell é uma ferramenta de experimentação. Ele complementa o desenvolvimento com arquivos `.java`; não substitui a organização de programas e projetos reais.
+
+    ### 6. Exercício — Experimente antes de consultar
+
+    1. Abra o JShell com `jshell`.
+    2. Declare uma variável `String` com seu nome.
+    3. Declare uma variável `int` com sua idade.
+    4. Faça o JShell exibir as duas variáveis.
+    5. Calcule `25 * 4` diretamente no prompt.
+    6. Use `/vars` e observe as variáveis declaradas.
+    7. Encerre com `/exit`.
+
+    Não copie uma solução pronta: digite cada instrução e observe o que acontece.
+
+    ### 7. Teste de compreensão — Lei de Feynman
+
+    Responda sem consultar a explicação:
+
+    1. O que significa REPL?
+    2. Por que o JShell é útil durante o aprendizado de Java?
+    3. Qual é a diferença entre testar uma instrução no JShell e executar um programa salvo em um arquivo `.java`?
+
+    **Explique com suas próprias palavras:** se o JShell é capaz de executar código Java, por que ainda precisamos aprender a criar arquivos e projetos Java?
+
+    **Status:** conteúdo registrado. Exercício e teste de compreensão aguardam sua tentativa.

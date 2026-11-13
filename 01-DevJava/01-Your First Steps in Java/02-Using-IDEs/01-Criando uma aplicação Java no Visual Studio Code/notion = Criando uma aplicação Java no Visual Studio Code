@@ -1,0 +1,394 @@
+- **Criando uma aplicação Java no Visual Studio Code**
+
+    # Criando uma aplicação Java no Visual Studio Code
+
+    ### Objetivo
+
+    Compreender como desenvolver aplicações Java utilizando o Visual Studio Code e a extensão Oracle Java Platform, conhecendo os recursos de configuração, criação de projetos, compilação, execução, depuração, refatoração, testes automatizados e documentação de código.
+
+    ## 1. O que é uma IDE?
+
+    IDE significa *Integrated Development Environment* (Ambiente de Desenvolvimento Integrado).
+
+    É um ambiente que reúne ferramentas para facilitar o desenvolvimento de software, permitindo escrever, organizar, executar, testar e depurar códigos em um único lugar.
+
+    Entre os recursos oferecidos por uma IDE estão:
+
+    - Editor de código.
+    - Ferramentas de compilação.
+    - Execução de programas.
+    - Depuração de código (*Debugging*).
+    - Testes automatizados.
+    - Organização de projetos.
+
+    O Visual Studio Code é apresentado pela Oracle como uma alternativa para desenvolver aplicações Java por meio da extensão Oracle Java Platform.
+
+    ## 2. Configuração do ambiente Java no VS Code
+
+    Para desenvolver aplicações Java no Visual Studio Code, é necessário instalar a extensão **Oracle Java Platform**.
+
+    A extensão está disponível no Visual Studio Code Marketplace e pode ser instalada pelo próprio editor.
+
+    **Caminho de instalação:**
+
+    `Code → Settings → Extensions`
+
+    ### 2.1 Criação de um projeto Java
+
+    O VS Code permite criar um novo projeto Java utilizando a Paleta de Comandos.
+
+    **Caminho:**
+
+    `View → Command Palette → Java: New Project`
+
+    Depois, é necessário selecionar a opção correspondente ao tipo de projeto desejado.
+
+    A Oracle apresenta a criação de um projeto utilizando **Java with Maven**.
+
+    Durante a criação, o editor solicita:
+
+    - Diretório onde o projeto será salvo.
+    - Nome do pacote (*Package Name*).
+
+    Após a confirmação, a extensão gera a estrutura inicial do projeto.
+
+    ### 2.2 Maven e arquivo pom.xml
+
+    O Maven é uma ferramenta utilizada para gerenciar e construir projetos Java.
+
+    Durante a criação do projeto, a extensão gera um arquivo chamado `pom.xml`.
+
+    Esse arquivo é responsável por armazenar grande parte das configurações necessárias para a construção do projeto, incluindo informações sobre sua organização e dependências.
+
+    ## 3. Configuração do JDK
+
+    O JDK (*Java Development Kit*) é necessário para desenvolver aplicações Java.
+
+    Caso não exista um JDK instalado, a extensão Oracle Java Platform pode auxiliar na instalação.
+
+    Também é possível indicar o caminho de um JDK que já esteja instalado no sistema operacional.
+
+    **Caminho para configurar ou instalar:**
+
+    `View → Command Palette → Download, install, and Use JDK`
+
+    Ao selecionar essa opção, o usuário pode escolher um JDK disponível para instalação ou indicar os arquivos de um JDK existente.
+
+    A extensão atualiza as configurações do usuário.
+
+    ### 3.1 Alteração manual do JDK
+
+    Quando for necessário utilizar outra versão do JDK, é possível modificar a configuração manualmente.
+
+    **Caminho:**
+
+    `View → Command Palette → Preferences: Open User Settings (JSON)`
+
+    Nessa configuração, a propriedade `jdk.jdkhome` pode ser atualizada para apontar para o diretório do JDK desejado.
+
+    ### 3.2 Locais onde a extensão procura o JDK
+
+    A extensão procura um JDK nas seguintes configurações, nesta ordem:
+
+    1. `jdk.jdkhome`
+    2. `java.home`
+    3. Variável de ambiente `JDK_HOME`.
+    4. Variável de ambiente `JAVA_HOME`.
+    5. Caminhos disponíveis no `PATH` do sistema.
+
+    **Requisito mínimo:** a extensão Oracle Java Platform exige, no mínimo, o JDK 11.
+
+    O mesmo JDK utilizado pela extensão pode ser utilizado para compilar, executar e depurar os projetos Java.
+
+    ## 4. Project Explorer
+
+    O Visual Studio Code possui o Explorer, que permite visualizar os arquivos e diretórios do projeto.
+
+    Além dele, a extensão Oracle Java Platform oferece o **Project Explorer**, um recurso específico para visualizar e navegar pela estrutura de projetos Java.
+
+    Seu objetivo é facilitar a navegação entre pacotes, classes e arquivos do projeto.
+
+    Por meio desse recurso, também é possível realizar operações como:
+
+    - Limpar o projeto (*Clean*).
+    - Compilar o código.
+    - Executar aplicações.
+    - Executar testes.
+    - Depurar programas.
+
+    O Project Explorer oferece suporte a projetos Maven e Gradle.
+
+    ## 5. Debugger e Launch Configurations
+
+    O Debugger é uma ferramenta utilizada para acompanhar a execução de um programa e investigar possíveis erros.
+
+    A extensão Oracle Java Platform oferece suporte à execução e depuração de aplicações Java utilizando JDK 11 ou superior.
+
+    Existem duas maneiras de iniciar a depuração:
+
+    - Selecionando `Run main | Debug main` diretamente no código.
+    - Utilizando o painel `Run and Debug`.
+
+    ### 5.1 Recursos disponíveis no Debugger
+
+    A extensão oferece as seguintes operações:
+
+    | Recurso | Função |
+    | --- | --- |
+    | Pause | Pausa a execução do programa. |
+    | Step Over | Executa a próxima linha sem entrar no método chamado. |
+    | Step Into | Entra no método chamado para acompanhar sua execução. |
+    | Step Out | Sai do método atual e retorna ao ponto de chamada. |
+    | Restart | Reinicia a execução. |
+    | Stop/Disconnect | Interrompe ou desconecta a sessão de depuração. |
+
+    ### 5.2 Launch Configurations
+
+    As configurações de execução permitem personalizar a maneira como uma aplicação Java será iniciada.
+
+    No painel Run and Debug, é possível selecionar `Java+` para personalizar as configurações.
+
+    As configurações padrão ficam disponíveis no arquivo:
+
+    `launch.json`
+
+    Esse arquivo permite configurar parâmetros relacionados à execução e depuração.
+
+    Entre as possibilidades estão:
+
+    - Argumentos do programa (*Program Arguments*).
+    - Opções da JVM (*VM Options*).
+    - Variáveis de ambiente.
+    - Diretório de trabalho (*Working Directory*).
+
+    Também é possível conectar o Debugger a processos Java existentes, utilizando uma porta de comunicação JDWP ou, no Windows, a opção Attach to Shared Memory.
+
+    ## 6. Code Refactoring
+
+    Refactoring é o processo de melhorar a estrutura interna de um código sem alterar seus requisitos funcionais.
+
+    O objetivo é tornar o código mais organizado, legível e fácil de manter.
+
+    A extensão Oracle Java Platform oferece recursos de refatoração diretamente no editor.
+
+    ### 6.1 Exemplos de refatoração
+
+    A documentação apresenta exemplos de substituição de métodos antigos por métodos mais apropriados.
+
+    Para projetos utilizando JDK 21 ou superior, é possível substituir:
+
+    ```
+    list.get(0);
+    ```
+
+    Por:
+
+    ```
+    list.getFirst();
+    ```
+
+    Da mesma forma:
+
+    ```
+    list.get(list.size() - 1);
+    ```
+
+    Pode ser substituído por:
+
+    ```
+    list.getLast();
+    ```
+
+    Esses métodos pertencem à interface SequencedCollection e permitem acessar diretamente o primeiro e o último elemento de uma coleção compatível.
+
+    ### 6.2 Outros recursos de refatoração
+
+    A extensão também oferece:
+
+    - Alteração de parâmetros de métodos e construtores.
+    - Geração de `hashCode()`, `equals()` e `toString()`.
+    - Extração de expressões para variáveis locais.
+    - Separação de declaração e atribuição.
+    - Movimentação de membros entre classes.
+    - Extração de interfaces e métodos.
+    - Conversão para imports estáticos.
+    - Movimentação de classes entre pacotes.
+    - Reorganização de estruturas `if`, `try-catch`, `switch` e `while`.
+
+    Também é possível organizar os imports automaticamente.
+
+    A extensão permite configurar a quantidade de classes necessárias para utilizar imports com `*`, além de definir a ordem dos grupos de imports.
+
+    Existe ainda a opção de organizar os imports automaticamente ao salvar o arquivo.
+
+    **Caminho:**
+
+    `View → Command Palette → Preferences: Open User Settings → Extensions → Java`
+
+    ## 7. Testes automatizados
+
+    Os testes automatizados permitem verificar se os métodos de uma aplicação estão funcionando conforme o esperado.
+
+    A extensão Oracle Java Platform oferece suporte à geração e execução de testes.
+
+    ### 7.1 Geração de testes
+
+    É possível gerar uma classe de teste utilizando o recurso Source Action.
+
+    **Caminho:**
+
+    `Show Code → Source Actions → Generate Tests`
+
+    Depois, o editor solicita a confirmação do nome da classe e dos métodos que deverão possuir testes.
+
+    A classe gerada pode conter métodos vazios ou testes que ainda falham, pois precisam ser implementados.
+
+    A documentação também apresenta a anotação `@Disabled`, que permite excluir ou ignorar temporariamente determinados testes durante a execução.
+
+    ### 7.2 Exemplo utilizando JUnit
+
+    A documentação demonstra um teste para verificar o método `extractCommonElements()`.
+
+    ```
+    import java.util.Arrays;
+    import java.util.List;
+    import org.junit.jupiter.api.Test;
+
+    import static org.junit.jupiter.api.Assertions.assertEquals;
+
+    public class ConcatenateTest {
+
+        @Test
+        public void testExtractCommonElements() {
+
+            List<Integer> list1 =
+                Arrays.asList(31, 20, 15, 17);
+
+            List<Integer> list2 =
+                Arrays.asList(20, 19, 17, 45);
+
+            List<Integer> expResult =
+                Arrays.asList(17, 20);
+
+            List<Integer> result =
+                Concatenate.extractCommonElements(list1, list2);
+
+            assertEquals(expResult, result);
+        }
+    }
+    ```
+
+    Nesse exemplo:
+
+    - `@Test`: identifica um método de teste.
+    - `assertEquals()`: compara o resultado esperado com o resultado obtido.
+    - `expResult`: representa o resultado esperado.
+    - `result`: representa o resultado produzido pelo método testado.
+
+    O teste verifica se a interseção entre as duas listas corresponde aos valores esperados: `17` e `20`.
+
+    ### 7.3 Test Explorer
+
+    A extensão oferece o painel Test Explorer, que permite:
+
+    - Executar todos os testes do projeto.
+    - Examinar os resultados.
+    - Acessar o código dos testes.
+    - Executar testes individualmente.
+
+    ## 8. Documentação de código com JavaDoc
+
+    JavaDoc é um recurso utilizado para documentar classes, métodos, parâmetros e retornos de código Java.
+
+    A extensão auxilia na criação de comentários JavaDoc automaticamente.
+
+    Para iniciar a documentação de um método, basta digitar:
+
+    ```
+    /**
+    ```
+
+    Acima da assinatura do método.
+
+    O editor sugere um comentário pré-formatado, contendo os campos necessários para documentar os parâmetros e o retorno.
+
+    Exemplo:
+
+    ```
+    /**
+     *
+     * @param list1
+     * @param list2
+     * @return
+     */
+    public static List<Integer> extractCommonElements(
+        List<Integer> list1,
+        List<Integer> list2
+    ) {
+    }
+    ```
+
+    Os campos representam:
+
+    - `@param`: documentação de um parâmetro recebido pelo método.
+    - `@return`: documentação do valor retornado pelo método.
+
+    A documentação facilita a compreensão e a manutenção do código por outros desenvolvedores.
+
+    ## 9. Evolução e gerenciamento de versões do Java
+
+    Quando um projeto precisa funcionar com diferentes versões do Java, a extensão permite associar perfis específicos para cada ambiente de execução.
+
+    Depois de criar um perfil, é possível personalizar seu arquivo `settings.json` e definir a propriedade:
+
+    ```
+    {
+        "jdk.jdkhome": "caminho/do/jdk"
+    }
+    ```
+
+    Isso permite indicar qual instalação do JDK deverá ser utilizada naquele perfil.
+
+    ## 10. Código aberto e participação da comunidade
+
+    A Oracle informa que a extensão é um projeto de código aberto.
+
+    A comunidade pode participar de sua evolução por meio de contribuições, sugestões e feedback.
+
+    A documentação disponibiliza referências para consultar o guia de contribuição e participar do desenvolvimento da extensão.
+
+    ---
+
+    ## 11. Principais conhecimentos adquiridos
+
+    Ao estudar esse material, é possível compreender que uma IDE não serve apenas para escrever código. Ela reúne ferramentas que auxiliam durante todo o ciclo de desenvolvimento de uma aplicação.
+
+    Os principais conhecimentos apresentados foram:
+
+    1. Configuração de um ambiente Java no Visual Studio Code.
+    2. Criação de projetos Java utilizando Maven.
+    3. Conhecimento do arquivo de configuração `pom.xml`.
+    4. Configuração e gerenciamento do JDK.
+    5. Navegação pela estrutura de projetos Java.
+    6. Utilização de ferramentas de Debugging.
+    7. Refatoração para melhorar a qualidade do código.
+    8. Criação e execução de testes automatizados com JUnit.
+    9. Utilização do Test Explorer.
+    10. Documentação de métodos utilizando JavaDoc.
+    11. Gerenciamento de diferentes versões do JDK.
+
+    ## 12. Referência
+
+    **Fonte:** Oracle — Learn Java
+
+    **Material:** Building a Java application in Visual Studio Code
+
+    **Última atualização informada:** 22 de abril de 2024.
+
+    https://dev.java/learn/your-first-steps/building-a-java-application-in-visual-studio-code/
+
+    ---
+
+    *Documentação pessoal de estudos — My-Studying-Java.*
+
+    **Observação:** mantive o conteúdo direcionado ao tutorial da Oracle. Não considerei esses recursos como atividades já praticadas ou dominadas; esta anotação registra o conhecimento apresentado pela documentação.

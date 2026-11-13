@@ -1,0 +1,21 @@
+# Executar códigos Java diretamente pelo IntelliJ IDEA
+
+## Procedimento
+
+1. Abrir o terminal integrado do IntelliJ IDEA usando `Alt + F12`.
+2. Verificar se o terminal está na raiz do projeto.
+3. Executar o arquivo `.java` utilizando o comando `java` seguido do caminho do arquivo.
+
+### Exemplo
+
+```powershell
+java "01-DevJava/01-Your First Steps in Java/01-Your-first-java-code/01-Getting Started with Java/MyFirstJavaApp.java"
+```
+
+### Para executar outros arquivos
+
+Basta substituir o caminho e o nome do arquivo pelo arquivo Java que deseja executar.
+
+**Observação:** o caminho deve corresponder à localização real do arquivo dentro do projeto.
+
+*Documentação pessoal de estudos — My-Studying-Java.*

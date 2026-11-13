@@ -1,0 +1,184 @@
+- **JShell - The Java Shell Tool**
+
+    **1. 🎯 Objetivo**
+
+    Compreender o que é o JShell, sua finalidade e como utilizá-lo para experimentar trechos de código Java de maneira interativa.
+
+    Ao concluir este conteúdo, você deverá compreender:
+
+    - O que é o JShell.
+    - Para que serve a ferramenta.
+    - O que são snippets.
+    - Como executar instruções Java interativamente.
+    - Como utilizar os principais comandos do JShell.
+
+    **2. 📚 Conceitos**
+
+    **O que é JShell?**
+
+    JShell é uma ferramenta interativa do Java, conhecida como *Java Shell*.
+
+    Ela permite escrever e executar trechos de código Java diretamente no ambiente interativo, sem precisar criar um programa completo para cada experimento.
+
+    Esse ambiente funciona como um REPL (*Read-Eval-Print Loop*): recebe uma instrução, avalia o código e apresenta o resultado.
+
+    **O que são snippets?**
+
+    Snippets são trechos de código Java inseridos e executados individualmente no JShell.
+
+    Podem representar elementos como:
+
+    - Declarações.
+    - Expressões.
+    - Métodos.
+    - Classes.
+
+    **Finalidade**
+
+    O JShell permite experimentar funcionalidades da linguagem Java e verificar resultados de maneira interativa.
+
+    **3. 🧠 O que memorizar**
+
+    - **JShell:** ferramenta interativa do Java.
+    - **Java Shell:** nome associado ao JShell.
+    - **REPL:** ambiente que recebe, avalia e apresenta resultados.
+    - **Snippet:** trecho de código executado no JShell.
+    - **`/help`:** apresenta a ajuda da ferramenta.
+    - **`/list`:** apresenta os snippets inseridos.
+    - **`/vars`:** apresenta as variáveis declaradas.
+    - **`/methods`:** apresenta os métodos declarados.
+    - **`/types`:** apresenta os tipos declarados.
+
+    O JShell é destinado à experimentação interativa de código Java.
+
+    # 4. 💻 Exemplos
+
+    ## Exemplos de comandos do JShell
+
+    Os comandos do JShell começam com `/`.
+
+    | Comando | Finalidade |
+    | --- | --- |
+    | `/help` | Consultar a ajuda |
+    | `/list` | Listar snippets |
+    | `/vars` | Listar variáveis |
+    | `/methods` | Listar métodos |
+    | `/types` | Listar tipos |
+    | `/imports` | Consultar imports |
+    | `/history` | Consultar o histórico |
+    | `/save` | Salvar informações |
+    | `/open` | Abrir um arquivo |
+    | `/edit` | Editar snippets |
+    | `/drop` | Remover um snippet |
+    | `/reset` | Reiniciar o estado da sessão |
+    | `/reload` | Recarregar informações |
+    | `/env` | Consultar ou configurar o ambiente |
+    | `/exit` | Sair do JShell |
+
+    ## Autocompletar
+
+    A tecla `Tab` permite utilizar o recurso de autocompletar durante a escrita de código.
+
+    **5. 🔎 Explicação**
+
+    **Como funciona o JShell?**
+
+    O JShell permite trabalhar com trechos de código sem precisar preparar uma aplicação Java completa para cada teste.
+
+    O funcionamento é interativo:
+
+    1. O desenvolvedor escreve um trecho de código.
+    2. O JShell recebe a instrução.
+    3. A ferramenta avalia o código.
+    4. O resultado é apresentado no ambiente.
+
+    **Diferença entre código Java e comandos do JShell**
+
+    Existem duas formas diferentes de entrada:
+
+    - **Código Java:** instruções, declarações e expressões da linguagem.
+    - **Comandos do JShell:** comandos administrativos que começam com `/`.
+
+    Por exemplo, `/help` é um comando do JShell, não uma instrução da linguagem Java.
+
+    **7. 📝 Resumo**
+
+    O JShell é uma ferramenta interativa do Java que permite executar e experimentar pequenos trechos de código.
+
+    Seu funcionamento é baseado no conceito de REPL: recebe uma instrução, avalia e apresenta o resultado.
+
+    Os trechos executados são chamados de snippets. A ferramenta também oferece comandos administrativos para consultar variáveis, métodos, tipos, histórico e outras informações da sessão.
+
+    O JShell facilita a experimentação da linguagem sem exigir a criação de uma aplicação completa para cada teste.
+
+    **8. 🏋️ Prática**
+
+    **Exercícios de fixação**
+
+    **Exercício 1 — Conceito**
+
+    Explique com suas palavras o que é JShell.
+
+    **Exercício 2 — Finalidade**
+
+    Qual é a finalidade de utilizar o JShell durante o aprendizado de Java?
+
+    **Exercício 3 — Comandos**
+
+    Associe cada comando à sua finalidade:
+
+    - `/help`
+    - `/list`
+    - `/vars`
+    - `/methods`
+    - `/exit`
+
+    **Exercício 4 — Compreensão**
+
+    Qual é a diferença entre um snippet e um comando administrativo do JShell?
+
+    **Exercício 5 — Aplicação**
+
+    Abra o JShell e explore os comandos de ajuda e listagem.
+
+    Registre o que aconteceu ao executar cada comando.
+
+    *Resolva os exercícios antes de consultar as respostas.*
+
+    **9. 🔄 Revisão**
+
+    Responda sem consultar o material:
+
+    1. O que significa JShell?
+    2. O que é um REPL?
+    3. O que são snippets?
+    4. Qual caractere identifica os comandos administrativos do JShell?
+    5. Qual comando apresenta a ajuda?
+    6. Qual comando lista as variáveis?
+    7. Qual comando permite sair do JShell?
+    8. Para que serve a tecla `Tab`?
+
+    **Critério de revisão:** conseguir explicar a finalidade da ferramenta e identificar os principais comandos sem depender das anotações.
+
+    # 10. ✅ Checklist
+
+    - [ ]Compreendi o que é JShell.
+
+    - [ ]Entendi o conceito de REPL.
+
+    - [ ]Compreendi o significado de snippet.
+
+    - [ ]Identifiquei a diferença entre código Java e comandos do JShell.
+
+    - [ ]Conheço os principais comandos administrativos.
+
+    - [ ]Entendi a função do autocompletar com `Tab`.
+
+    - [ ]Pratiquei a utilização do ambiente.
+
+    - [ ]Consegui responder aos exercícios sem consultar as anotações.
+
+
+    ---
+
+    *Documentação pessoal de estudos — My-Studying-Java.*

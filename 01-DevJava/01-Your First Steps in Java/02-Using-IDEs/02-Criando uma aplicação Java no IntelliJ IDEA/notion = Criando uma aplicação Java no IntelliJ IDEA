@@ -1,0 +1,510 @@
+- **Criando uma aplicação Java no IntelliJ IDEA**
+
+    # Criando uma aplicação Java no IntelliJ IDEA
+
+    `AceleraDev → Dev.Java → Your First Steps in Java → Your first Java code → Using IDEs → Criando uma aplicação Java no IntelliJ IDEA`
+
+    ### Objetivo
+
+    Compreender como desenvolver aplicações Java utilizando o IntelliJ IDEA, conhecendo os recursos de criação de projetos, configuração do JDK, escrita e execução de código, testes automatizados, depuração, refatoração, documentação e navegação pelo projeto.
+
+    ## 1. O que é uma IDE?
+
+    IDE significa *Integrated Development Environment* (Ambiente de Desenvolvimento Integrado).
+
+    É um ambiente que reúne ferramentas para facilitar o desenvolvimento de software. Permite escrever, compilar e executar código, além de integrar ferramentas de compilação, testes, depuração e controle de versão.
+
+    Uma IDE também facilita a pesquisa e a navegação pelo código-fonte, indo além do que é possível fazer apenas pelo sistema de arquivos.
+
+    O IntelliJ IDEA é uma das IDEs utilizadas para Java. Sua interface e seus recursos ajudam tanto quem está começando quanto quem já trabalha profissionalmente com desenvolvimento.
+
+    ## 2. Instalação do IntelliJ IDEA
+
+    A instalação é realizada por meio do site oficial do IntelliJ IDEA, seguindo as instruções correspondentes ao sistema operacional.
+
+    Ao instalar o IntelliJ IDEA pela primeira vez, é oferecido um período de avaliação de 30 dias da assinatura Ultimate.
+
+    A versão Ultimate possui recursos avançados para desenvolvimento profissional. Entretanto, esses recursos não são necessários para acompanhar o tutorial.
+
+    Após o término da avaliação, o IntelliJ IDEA continua funcional com os recursos básicos necessários para desenvolver aplicações Java.
+
+    ### 2.1 Tela de boas-vindas
+
+    Ao iniciar o IntelliJ IDEA, é apresentada a tela de boas-vindas. Nela, é possível:
+
+    - Criar um novo projeto.
+    - Abrir um projeto existente.
+    - Obter um projeto de um sistema de controle de versão, como o GitHub.
+
+    Para desenvolver aplicações Java, também é necessário possuir um JDK. O próprio IntelliJ IDEA permite selecionar, adicionar ou baixar um JDK durante a criação de um projeto.
+
+    ## 3. Criação de um novo projeto Java
+
+    Um novo projeto pode ser criado de duas maneiras:
+
+    - Pela tela de boas-vindas.
+    - Pelo menu principal: `File → New → Project`.
+
+    Na janela de criação, é necessário selecionar Java, informar o nome do projeto e escolher o sistema de compilação.
+
+    ### 3.1 Sistemas de compilação
+
+    O IntelliJ IDEA oferece suporte a Maven e Gradle, dois sistemas bastante utilizados no desenvolvimento Java.
+
+    Uma ferramenta de compilação ajuda a:
+
+    - Construir o projeto.
+    - Gerenciar dependências, como bibliotecas adicionais.
+    - Facilitar o compartilhamento do projeto.
+    - Permitir que a aplicação seja construída em outra máquina.
+
+    Também é possível utilizar o sistema de compilação próprio do IntelliJ IDEA, caso não queira usar Maven ou Gradle.
+
+    Neste tutorial, a Oracle utiliza Maven.
+
+    ### 3.2 Configuração do JDK durante a criação
+
+    Para desenvolver uma aplicação Java, é necessário selecionar um JDK.
+
+    Existem três situações:
+
+    1. **JDK já configurado no IntelliJ IDEA:** basta selecioná-lo na lista de JDKs disponíveis.
+    2. **JDK instalado, mas ainda não configurado na IDE:** selecionar `Add JDK` e indicar o caminho do diretório principal do JDK.
+    3. **JDK ainda não instalado:** selecionar `Download JDK`, escolher o fornecedor e a versão desejada e iniciar o download.
+
+    O tutorial utiliza Java 25.
+
+    ### 3.3 Código de exemplo
+
+    A opção `Add sample code` adiciona uma classe Main com um programa que imprime “Hello World”.
+
+    No tutorial, essa opção deve permanecer desmarcada para que o código seja criado manualmente depois.
+
+    Após preencher as configurações, basta clicar em `Create`.
+
+    ### 3.4 Estrutura do projeto Maven
+
+    Quando Maven é selecionado, o IntelliJ IDEA cria uma estrutura inicial que inclui o arquivo `pom.xml`.
+
+    O `pom.xml` armazena informações e configurações utilizadas pelo Maven para construir o projeto.
+
+    A janela Project, localizada à esquerda, permite visualizar a estrutura criada.
+
+    | Diretório ou arquivo | Função |
+    | --- | --- |
+    | `.idea` | Armazena configurações do projeto no IntelliJ IDEA. |
+    | `src/main/java` | Diretório destinado ao código Java da aplicação. |
+    | `src/test/java` | Diretório destinado aos testes. |
+    | `pom.xml` | Arquivo de configuração do projeto Maven. |
+
+    ## 4. Escrever e editar código Java
+
+    O tutorial utiliza um recurso disponível a partir do Java 25: o arquivo-fonte compacto (*compact source file*).
+
+    ### 4.1 Criar um arquivo-fonte compacto
+
+    Na janela Project:
+
+    1. Selecione o diretório `src/main/java`.
+    2. Clique com o botão direito.
+    3. Selecione `New → Java Compact File`.
+    4. Informe o nome `HelloWorld`.
+
+    Se estiver utilizando uma versão do Java anterior à 25, a opção de arquivo-fonte compacto não estará disponível. Nesse caso, deve-se selecionar `New → Java Class`.
+
+    **Atalho para criar um arquivo Java:**
+
+    - Windows/Linux: `Alt + Insert`.
+    - macOS: `⌘N`.
+
+    ### 4.2 Método main e primeiro programa
+
+    O ponto de entrada utilizado para executar um programa Java é o método `main`.
+
+    Ao criar um arquivo-fonte compacto, o IntelliJ IDEA adiciona o método automaticamente:
+
+    ```
+    void main() {
+
+    }
+    ```
+
+    Para imprimir uma mensagem no console, o tutorial utiliza:
+
+    ```
+    void main() {
+        IO.println("Hello World!");
+    }
+    ```
+
+    A documentação recomenda digitar o código em vez de apenas copiar e colar, pois isso ajuda a se familiarizar com a sintaxe.
+
+    Se for criada uma classe Java tradicional, será necessário adicionar o método `main` manualmente. Nesse formato, a impressão no console utiliza `System.out.println()`:
+
+    ```
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello World");
+        }
+    }
+    ```
+
+    **Atenção:** os exemplos representam duas formas diferentes de iniciar um programa, conforme o tipo de arquivo e a versão do Java utilizada.
+
+    ### 4.3 Preenchimento automático e sugestões
+
+    Enquanto o código é digitado, o IntelliJ IDEA oferece preenchimento automático (*Code Completion*).
+
+    Esse recurso sugere nomes de classes, métodos, campos, palavras-chave e outros elementos do código.
+
+    É possível navegar pelas sugestões utilizando as setas do teclado e confirmar a opção desejada com Enter.
+
+    A IDE também identifica problemas de sintaxe e apresenta sugestões para corrigi-los.
+
+    - `Alt + Enter`: apresenta ações e sugestões para resolver problemas ou transformar o código.
+    - `F2`: avança para o próximo problema.
+    - `Shift + F2`: retorna ao problema anterior.
+
+    ### 4.4 Converter arquivo compacto em classe
+
+    O IntelliJ IDEA permite converter um arquivo-fonte compacto em uma classe Java tradicional.
+
+    Para isso:
+
+    1. Posicione o cursor sobre o método `main`.
+    2. Pressione `Alt + Enter`.
+    3. Selecione `Convert into a regular class`.
+
+    Também é possível utilizar o preenchimento de comandos digitando dois pontos (`..`) após o método e selecionando a opção de conversão.
+
+    ### 4.5 Geração e formatação de código
+
+    O IntelliJ IDEA pode gerar automaticamente estruturas comuns, como:
+
+    - Construtores.
+    - Getters e setters.
+    - Métodos `toString()`.
+    - Métodos `equals()` e `hashCode()`.
+
+    A IDE também gerencia a formatação do código durante a escrita.
+
+    Para formatar manualmente:
+
+    - Windows/Linux: `Ctrl + Alt + L`.
+    - macOS: `⌘⌥L`.
+
+    ## 5. Executar a aplicação
+
+    Uma das vantagens de uma IDE é permitir executar o código sem precisar compilar manualmente pela linha de comando.
+
+    Para executar um arquivo-fonte compacto, é possível:
+
+    - Clicar no botão verde Run ao lado do método `main`.
+    - Utilizar o atalho `Ctrl + Shift + F10` no Windows/Linux.
+    - Utilizar o botão Run no canto superior direito da IDE.
+
+    Quando o projeto utiliza uma classe tradicional, o botão Run aparece próximo à declaração da classe ou do método `main`.
+
+    ### 5.1 Configurações de execução
+
+    Se a aplicação precisar receber argumentos, eles podem ser configurados em Run Configurations.
+
+    Para editar:
+
+    1. Abra o seletor de configurações de execução.
+    2. Selecione `Edit Configurations`.
+    3. Ajuste as opções necessárias.
+
+    A janela Run/Debug Configurations permite modificar opções da JVM, adicionar argumentos do programa e configurar outros parâmetros de execução.
+
+    ## 6. Testes automatizados
+
+    Testar o código ajuda a verificar se o programa realiza aquilo que deveria.
+
+    Os testes podem ser realizados manualmente, executando a aplicação, ou automaticamente, criando testes que verificam os resultados esperados.
+
+    Pensar nos cenários que precisam ser testados também ajuda a dividir um problema em partes menores.
+
+    ### 6.1 Exemplo: classe Calculator
+
+    O tutorial apresenta uma classe `Calculator` com um método que calcula a média de uma lista de números:
+
+    ```
+    public class Calculator {
+
+        public static double average(int[] numbers) {
+            int sum = 0;
+            for (int number : numbers) {
+                sum += number;
+            }
+            double avg = (double) sum / numbers.length;
+            return avg;
+        }
+    }
+    ```
+
+    O objetivo é verificar se a média é calculada corretamente.
+
+    Também é necessário considerar situações diferentes:
+
+    - Um array com números positivos.
+    - Um array vazio.
+    - Um array com números negativos.
+    - Um array com números positivos e negativos.
+
+    ### 6.2 Criar uma classe de teste
+
+    O IntelliJ IDEA permite navegar até o teste de uma classe ou criar uma classe de teste quando ela ainda não existe.
+
+    **Atalho no Windows/Linux:** `Ctrl + Shift + T`.
+
+    A classe de teste é criada no diretório `src/test/java`.
+
+    Durante a criação, é possível selecionar a biblioteca de testes.
+
+    O IntelliJ IDEA oferece suporte a diferentes bibliotecas, incluindo JUnit 5 e JUnit 6.
+
+    Se o JUnit 5 ainda não estiver configurado no projeto, a IDE pode apresentar a mensagem `JUnit5 library not found in the module`. Ao selecionar `Fix`, ela pode adicionar a biblioteca necessária.
+
+    Em projetos Maven, a dependência `junit-jupiter` é adicionada à seção `<dependencies>` do arquivo `pom.xml`.
+
+    Para carregar as alterações do Maven, utilize a opção `Load Maven Changes`.
+
+    ### 6.3 Exemplo de teste com JUnit
+
+    O tutorial demonstra dois testes para o método `average()`:
+
+    ```
+    import org.junit.jupiter.api.Test;
+    import static org.junit.jupiter.api.Assertions.assertEquals;
+
+    public class CalculatorTest {
+
+        @Test
+        void shouldCalculateAverageOfPositiveNumbers() {
+            int[] numbers = {1, 2, 3, 4, 5};
+
+            double actualAverage = Calculator.average(numbers);
+
+            double expectedAverage = 3.0;
+            assertEquals(expectedAverage, actualAverage);
+        }
+
+        @Test
+        void shouldReturnZeroAverageForEmptyArray() {
+            int[] numbers = {};
+
+            double actualAverage = Calculator.average(numbers);
+
+            double expectedAverage = 0;
+            assertEquals(expectedAverage, actualAverage);
+        }
+    }
+    ```
+
+    Conceitos apresentados:
+
+    - `@Test`: identifica um método de teste.
+    - `assertEquals()`: compara o resultado esperado com o resultado obtido.
+    - `expectedAverage`: representa o resultado esperado.
+    - `actualAverage`: representa o valor retornado pelo método testado.
+
+    ### 6.4 Resultado dos testes e identificação de falhas
+
+    Ao executar todos os testes, o tutorial demonstra que o segundo teste falha.
+
+    O teste esperava receber `0` para um array vazio, mas recebeu `NaN` (*Not a Number*).
+
+    Isso acontece porque o método tenta calcular a média dividindo a soma pela quantidade de elementos. Quando o array está vazio, sua quantidade de elementos é zero.
+
+    O teste revelou um cenário que não havia sido considerado na implementação inicial.
+
+    ## 7. Depuração (Debugging)
+
+    O Debugger permite acompanhar a execução do programa para entender seu funcionamento e investigar erros ou testes que falham.
+
+    Com ele, é possível observar:
+
+    - O estado das variáveis.
+    - Os valores dos objetos.
+    - A ordem em que os métodos são chamados, por meio da pilha de chamadas (*Call Stack*).
+    - O resultado de expressões durante a execução.
+
+    ### 7.1 Breakpoints
+
+    Um breakpoint é um ponto de parada definido no código.
+
+    Quando a execução chega a essa linha, o programa pausa para permitir a investigação.
+
+    Para adicionar um breakpoint:
+
+    - Clique na margem ao lado da linha desejada.
+    - Ou posicione o cursor na linha e pressione `Ctrl + F8` no Windows/Linux.
+
+    Depois, execute a aplicação ou o teste utilizando a opção Debug.
+
+    ### 7.2 Navegação durante a depuração
+
+    Durante a execução no Debugger, é possível avançar pelo código de diferentes maneiras:
+
+    | Ação | Função |
+    | --- | --- |
+    | Step Into | Entra no método chamado para acompanhar sua execução. |
+    | Step Over | Avança para a próxima linha sem entrar no método chamado. |
+    | Resume | Continua a execução do programa. |
+
+    O tutorial utiliza o Debugger para investigar o teste que falhou no cálculo da média de um array vazio.
+
+    Ao avaliar a expressão `sum / numbers.length`, ocorre uma `java.lang.ArithmeticException: / by zero`.
+
+    Ao avaliar `(double) sum / numbers.length`, o resultado é `NaN`.
+
+    A análise mostra que a implementação precisa tratar explicitamente o caso em que o array não possui elementos.
+
+    ### 7.3 Corrigir o problema identificado
+
+    A documentação apresenta uma correção: verificar se o array está vazio antes de realizar o cálculo.
+
+    ```
+    public class Calculator {
+
+        public static double average(int[] numbers) {
+            if (numbers.length == 0) {
+                return 0;
+            }
+
+            int sum = 0;
+            for (int number : numbers) {
+                sum += number;
+            }
+
+            double avg = (double) sum / numbers.length;
+            return avg;
+        }
+    }
+    ```
+
+    Depois da alteração, os testes são executados novamente e passam.
+
+    **Aprendizado importante:** um teste que falha não serve apenas para apontar um erro. Ele também pode revelar um cenário que não foi considerado durante a implementação.
+
+    ## 8. Refatoração de código
+
+    Refatoração (*Refactoring*) é o processo de melhorar a estrutura interna do código sem alterar seu funcionamento.
+
+    O IntelliJ IDEA oferece diferentes recursos para realizar essas alterações.
+
+    ### 8.1 Renomear elementos
+
+    É possível renomear classes, variáveis e métodos utilizando:
+
+    `Shift + F6` — Windows/Linux.
+
+    Também é possível utilizar o menu `Refactor → Rename` ou a conclusão de comandos do editor.
+
+    ### 8.2 Outros recursos de refatoração
+
+    | Recurso | Atalho Windows/Linux | Função |
+    | --- | --- | --- |
+    | Inline Variable | `Ctrl + Alt + N` | Substitui uma variável pelo valor ou expressão que ela representa. |
+    | Extract Variable | `Ctrl + Alt + V` | Extrai uma expressão para uma variável. |
+    | Extract Method | `Ctrl + Alt + M` | Extrai parte do código para um método separado. |
+    | Refactoring Menu | `Ctrl + Alt + Shift + T` | Abre o menu com opções de refatoração. |
+
+    Esses recursos ajudam a dividir métodos longos em partes menores e a dar nomes mais claros às operações realizadas pelo código.
+
+    A documentação recomenda executar novamente os testes depois de uma refatoração para verificar se o comportamento continua correto.
+
+    ## 9. Documentação de código com JavaDoc
+
+    O JavaDoc permite documentar classes, métodos e outros elementos do código Java.
+
+    O IntelliJ IDEA oferece preenchimento automático para comentários de documentação.
+
+    Para iniciar um comentário, digite `/**` antes da declaração e pressione Enter.
+
+    A IDE completa a estrutura do comentário, incluindo campos como:
+
+    - `@param`: documenta um parâmetro recebido pelo método.
+    - `@return`: documenta o valor retornado pelo método.
+
+    ### 9.1 Reader Mode
+
+    O IntelliJ IDEA também oferece o Reader Mode, que facilita a leitura dos comentários JavaDoc.
+
+    Para alternar a visualização:
+
+    - Windows/Linux: `Ctrl + Alt + Q`.
+    - macOS: `^⌥Q`.
+
+    Também é possível utilizar a opção `Render All Doc Comments` para exibir todos os comentários de documentação nesse formato.
+
+    Se estiver utilizando Java 23 ou superior, a IDE também oferece uma ação para converter comentários JavaDoc para Markdown.
+
+    ## 10. Pesquisa e navegação pelo projeto
+
+    O IntelliJ IDEA oferece recursos para localizar informações e navegar pelo código-fonte.
+
+    É possível navegar entre arquivos, encontrar usos e declarações, localizar interfaces e suas implementações, consultar arquivos abertos recentemente e abrir arquivos pelo nome.
+
+    ### 10.1 Search Everywhere
+
+    A pesquisa Search Everywhere permite procurar informações em diferentes partes do projeto e da IDE.
+
+    **Atalho:** pressione `Shift` duas vezes.
+
+    A pesquisa pode localizar:
+
+    - Arquivos e diretórios.
+    - Classes.
+    - Símbolos.
+    - Ações.
+    - Configurações do projeto e do IntelliJ IDEA.
+
+    A tecla Tab permite alternar entre categorias de resultados.
+
+    ### 10.2 Find in Files
+
+    O recurso Find in Files permite pesquisar texto dentro dos arquivos.
+
+    **Atalho Windows/Linux:** `Ctrl + Shift + F`.
+
+    É possível limitar a pesquisa a diferentes escopos, como projeto, módulo, diretório ou escopo específico.
+
+    ## 11. Principais conhecimentos adquiridos
+
+    Ao estudar esse material, compreendi que o IntelliJ IDEA oferece recursos para acompanhar várias etapas do desenvolvimento de uma aplicação Java, desde a criação do projeto até os testes e a manutenção do código.
+
+    Os principais assuntos apresentados foram:
+
+    1. O papel de uma IDE no desenvolvimento Java.
+    2. Instalação e utilização do IntelliJ IDEA.
+    3. Criação de projetos Java com Maven.
+    4. Configuração e seleção do JDK.
+    5. Estrutura de diretórios de um projeto Maven.
+    6. Criação de arquivos-fonte compactos no Java 25 e classes tradicionais.
+    7. Escrita, preenchimento automático e formatação de código.
+    8. Execução de aplicações e configuração de argumentos.
+    9. Criação e execução de testes automatizados com JUnit.
+    10. Uso de breakpoints e Debugger para investigar falhas.
+    11. Refatoração para melhorar a organização do código.
+    12. Documentação de métodos com JavaDoc.
+    13. Pesquisa e navegação pelo código-fonte.
+
+    ## 12. Referência
+
+    **Fonte:** Oracle — Learn Java
+
+    **Material:** Building a Java Application in IntelliJ IDEA
+
+    **Contribuição:** Marit van Dijk, sob a licença UPL.
+
+    **Última atualização informada:** 2 de fevereiro de 2026.
+
+    Oracle — Criando uma aplicação Java no IntelliJ IDEA
+
+    ---
+
+    *Documentação pessoal de estudos — My-Studying-Java.*
+
+    **Observação:** esta anotação registra os recursos e conceitos apresentados no tutorial da Oracle. Não significa que todos eles já foram praticados ou dominados.

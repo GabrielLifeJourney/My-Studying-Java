@@ -1,0 +1,354 @@
+- **Criando uma aplicação Java no ambiente de desenvolvimento integrado Eclipse**
+
+    # Criando uma aplicação Java no ambiente de desenvolvimento integrado Eclipse
+
+    `AceleraDev → Dev.Java → Your First Steps in Java → Your first Java code → Using IDEs → Criando uma aplicação Java no ambiente de desenvolvimento integrado Eclipse`
+
+    ### Objetivo
+
+    Compreender como utilizar o Eclipse IDE para desenvolver aplicações Java, conhecendo a instalação, criação de projetos, escrita e execução de código, identificação de erros, depuração, geração de código e refatoração.
+
+    ## 1. Introdução ao Eclipse IDE
+
+    O Eclipse IDE é um ambiente de desenvolvimento integrado utilizado para auxiliar desenvolvedores na escrita, execução e depuração de código Java.
+
+    A ferramenta reúne recursos que facilitam o desenvolvimento de aplicações, permitindo trabalhar com projetos, classes, métodos e diferentes funcionalidades do código-fonte.
+
+    ## 2. Instalação e configuração inicial
+
+    A maneira mais simples de instalar o Eclipse é baixar e executar o instalador disponível no site oficial.
+
+    O instalador oferece diferentes opções de pacotes. Para desenvolvimento Java, a opção recomendada pelo tutorial é:
+
+    **Eclipse IDE for Java Developers.**
+
+    ### 2.1 Workspace
+
+    Após instalar o Eclipse, é necessário selecionar um Workspace.
+
+    O Workspace é o diretório onde ficam armazenados a maioria dos projetos utilizados no ambiente de desenvolvimento.
+
+    Depois de selecionar o Workspace, o Eclipse apresenta uma tela de boas-vindas com diferentes opções, incluindo um tutorial interativo para criar uma aplicação simples de Hello World.
+
+    Neste material, a criação do projeto será feita manualmente. Portanto, a tela de boas-vindas pode ser fechada utilizando o botão `Hide`, localizado no canto superior direito da aba Welcome.
+
+    ## 3. Criando um projeto Java
+
+    Para criar um novo projeto:
+
+    1. Clique no menu `File`, localizado no canto superior esquerdo.
+    2. Selecione `New → Java Project`.
+    3. Informe o nome do projeto em `Project name`.
+    4. No exemplo do tutorial, o nome utilizado é `HelloWorld`.
+
+    ### 3.1 Configuração do projeto
+
+    Na janela de criação do projeto, existem algumas configurações importantes:
+
+    - **Project name:** define o nome do projeto.
+    - **Module:** permite configurar informações relacionadas aos módulos Java.
+    - **Create module-info.java file:** no tutorial, essa opção deve ser desabilitada.
+    - **JRE:** permite configurar uma instalação Java personalizada, normalmente identificada como JDK (Java Development Kit).
+
+    Depois de configurar essas opções, o projeto será criado e aparecerá no lado esquerdo da janela do Eclipse.
+
+    ### 3.2 Estrutura inicial
+
+    Ao expandir o projeto, será possível visualizar um diretório chamado `src`.
+
+    Esse diretório é utilizado para armazenar as classes Java da aplicação.
+
+    Para criar uma classe:
+
+    1. Clique com o botão direito no diretório `src`.
+    2. Selecione `New → Class`.
+    3. Informe o nome da classe, por exemplo, `HelloWorld`.
+    4. Se necessário, configure um pacote (*package*) para agrupar várias classes.
+
+    ## 4. Content Assist — Preenchimento automático
+
+    O Eclipse possui um recurso chamado Content Assist, que auxilia na escrita do código Java por meio de sugestões e preenchimento automático.
+
+    Para utilizar o recurso enquanto edita um arquivo Java, pressione:
+
+    - Windows/Linux: `Ctrl + Space`.
+    - macOS: `⌘ + Space`.
+    - Sistemas chineses: `Alt + /`.
+
+    As sugestões podem ser confirmadas pressionando Enter ou clicando duas vezes sobre a opção desejada.
+
+    ### 4.1 Sugestões de código
+
+    O tutorial apresenta alguns exemplos:
+
+    **Criar o método main**
+
+    Ao digitar `main` dentro de uma classe e pressionar `Ctrl + Space`, o Eclipse sugere a criação de um método `main`.
+
+    **Imprimir informações no console**
+
+    Dentro de um método, é possível digitar `sysout` e utilizar o Content Assist para completar a instrução:
+
+    ```
+    System.out.println();
+    ```
+
+    **Completar nomes de classes e métodos**
+
+    O recurso também sugere e completa nomes de classes, como `String`, e métodos, como `String#length`.
+
+    Esse recurso reduz a necessidade de digitar instruções inteiras manualmente e facilita a escrita do código.
+
+    ## 5. Executando o programa Java
+
+    Para executar uma aplicação Java, é necessário possuir uma classe que contenha um método `main`.
+
+    Existem duas maneiras apresentadas no tutorial:
+
+    1. Clicar com o botão direito na classe, pelo Package Explorer, ou no editor de código.
+    2. Selecionar `Run As → Java Application`.
+
+    Também é possível executar a aplicação utilizando o botão Run, localizado na barra de ferramentas.
+
+    ### 5.1 Visualizando a saída
+
+    Quando o programa é executado, o Eclipse apresenta o resultado na visualização Console.
+
+    É nessa área que aparecem as informações impressas pelo programa, como mensagens produzidas utilizando `System.out.println()`.
+
+    ## 6. Erros de compilação e avisos
+
+    Durante a escrita do código, o Eclipse identifica problemas que podem impedir a compilação ou indicar possíveis falhas.
+
+    ### 6.1 Compilation Errors
+
+    Quando o Eclipse identifica um erro de compilação:
+
+    - A linha correspondente é sublinhada em vermelho.
+    - Ao posicionar o cursor sobre a linha ou sobre o ícone do erro, a IDE apresenta informações sobre o problema.
+    - A IDE também pode oferecer sugestões chamadas Quick Fixes.
+
+    Os Quick Fixes ajudam a corrigir problemas encontrados no código.
+
+    Entretanto, é importante analisar as sugestões antes de aplicá-las, pois uma IDE não consegue prever exatamente a intenção do desenvolvedor.
+
+    ### 6.2 Problems View
+
+    O Eclipse possui uma visualização chamada Problems, que apresenta uma lista dos erros identificados no projeto.
+
+    Caso essa visualização não esteja aberta, é possível acessá-la pelo menu:
+
+    `Window → Show View → Problems`.
+
+    Nessa área, é possível consultar os erros encontrados e identificar as linhas que precisam de atenção.
+
+    ### 6.3 Warnings
+
+    Além dos erros de compilação, o Eclipse também identifica situações que podem indicar problemas no código, mesmo quando ele consegue ser compilado.
+
+    Essas situações são chamadas de Warnings.
+
+    Um exemplo apresentado no tutorial é a declaração de uma variável que não está sendo utilizada.
+
+    É importante compreender a diferença:
+
+    - **Error:** indica um problema que pode impedir a compilação.
+    - **Warning:** indica uma situação potencialmente problemática, mesmo que o código possa ser compilado.
+
+    Os avisos também aparecem na visualização Problems.
+
+    ## 7. Debugging — Depuração
+
+    Debugging é o processo utilizado para investigar o funcionamento de um programa quando ele não apresenta o comportamento esperado.
+
+    O Eclipse oferece ferramentas que permitem acompanhar a execução do código, verificar valores de variáveis e avançar passo a passo pelo programa.
+
+    ### 7.1 Breakpoints
+
+    Um breakpoint é um ponto de parada definido pelo desenvolvedor em determinada linha do código.
+
+    Quando a execução chega a essa linha, o programa é temporariamente suspenso (*suspend*), permitindo analisar seu estado atual e acompanhar a execução.
+
+    Para adicionar um breakpoint:
+
+    1. Localize a linha do código em que deseja interromper a execução.
+    2. Dê dois cliques na área à esquerda dessa linha.
+    3. Um ponto azul aparecerá indicando o breakpoint.
+
+    **Importante:** quando o programa é executado normalmente, os breakpoints são ignorados. Para utilizá-los, é necessário executar a aplicação em modo Debug.
+
+    ### 7.2 Executar em modo Debug
+
+    Existem duas maneiras apresentadas no tutorial:
+
+    - Clicar no botão verde com o ícone de um inseto, localizado próximo ao botão Run.
+    - Utilizar `Debug As → Java Application`.
+
+    Quando a execução alcançar um breakpoint, o Eclipse poderá solicitar a mudança para a perspectiva Debug.
+
+    Essa perspectiva apresenta informações adicionais sobre a execução do programa.
+
+    Ao selecionar `Switch`, a IDE abre o ambiente de depuração.
+
+    ### 7.3 Debug Perspective
+
+    Na perspectiva Debug, o código continua visível na região central da IDE.
+
+    A linha atual da execução aparece destacada em verde, indicando a próxima instrução que será executada.
+
+    No lado direito, a visualização Variables apresenta as variáveis disponíveis e seus valores atuais.
+
+    Isso permite acompanhar o estado do programa enquanto ele está suspenso.
+
+    ### 7.4 Controles de execução
+
+    Enquanto o programa está suspenso, é possível controlar como a execução continuará.
+
+    | Ação | Atalho | Função |
+    | --- | --- | --- |
+    | Step Over | `F6` | Executa uma linha e avança para a próxima, sem entrar no método chamado. |
+    | Step Into | `F5` | Entra no método chamado para acompanhar sua execução. |
+    | Resume | `F8` | Continua a execução até encontrar o próximo breakpoint. |
+
+    Esses recursos permitem investigar o comportamento do programa de maneira controlada.
+
+    ## 8. Geração automática de código
+
+    Durante o desenvolvimento, algumas partes do código podem ser repetitivas e não conter muita lógica de negócio.
+
+    O Eclipse permite gerar automaticamente determinados métodos com base nos campos existentes em uma classe.
+
+    O tutorial apresenta como exemplo a classe `Person`, que armazena nome, sobrenome e idade.
+
+    ```
+    public class Person {
+        private String firstName;
+        private String lastName;
+        private int age;
+    }
+    ```
+
+    ### 8.1 Gerar Getters e Setters
+
+    Para gerar métodos de acesso aos campos:
+
+    1. Clique com o botão direito dentro da classe.
+    2. Selecione `Source`.
+    3. Escolha `Generate Getters and Setters...`.
+    4. Selecione os campos desejados.
+    5. Utilize `Select All` para selecionar todos.
+    6. Clique em `Generate`.
+
+    O Eclipse adicionará automaticamente os métodos correspondentes.
+
+    Exemplo:
+
+    ```
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    ```
+
+    O mesmo processo pode ser utilizado para os campos `lastName` e `age`.
+
+    ### 8.2 Gerar hashCode() e equals()
+
+    O Eclipse também permite gerar os métodos `hashCode()` e `equals()`.
+
+    Para isso:
+
+    1. Clique com o botão direito dentro da classe.
+    2. Selecione `Source`.
+    3. Escolha `Generate hashCode() and equals()...`.
+    4. Selecione os campos que devem participar da implementação.
+    5. Clique em `Generate`.
+
+    A IDE cria os métodos automaticamente e pode adicionar o import necessário:
+
+    ```
+    import java.util.Objects;
+    ```
+
+    Esses métodos são utilizados para implementar operações relacionadas à comparação e identificação de objetos.
+
+    ### 8.3 Gerar toString()
+
+    Outro método que pode ser gerado automaticamente é o `toString()`.
+
+    Ele retorna uma representação textual do objeto.
+
+    Para gerar:
+
+    1. Clique com o botão direito dentro da classe.
+    2. Selecione `Source`.
+    3. Escolha `Generate toString()...`.
+    4. Configure os campos que devem aparecer na representação.
+    5. Clique em `Generate`.
+
+    O Eclipse cria o método com base nas opções selecionadas.
+
+    ## 9. Refatoração de código
+
+    Refatoração (*Refactoring*) é o processo de modificar a estrutura do código existente preservando sua funcionalidade.
+
+    O Eclipse oferece diferentes opções de refatoração para facilitar a manutenção de aplicações Java.
+
+    ### 9.1 Renomear classes, métodos e variáveis
+
+    Um exemplo apresentado no tutorial é a renomeação de classes, métodos ou campos.
+
+    Para realizar essa operação:
+
+    1. Selecione o nome da classe, método ou variável.
+    2. Clique com o botão direito.
+    3. Escolha `Refactor → Rename`.
+    4. Informe o novo nome.
+    5. Confirme pressionando Enter.
+
+    Uma vantagem desse recurso é que o Eclipse também atualiza as referências ao elemento renomeado no projeto.
+
+    Isso evita que seja necessário procurar e modificar manualmente todas as ocorrências do nome antigo.
+
+    ## 10. Resumo
+
+    O Eclipse IDE oferece diversas ferramentas que auxiliam no desenvolvimento de aplicações Java.
+
+    O tutorial apresentou recursos importantes para começar a utilizar a IDE:
+
+    1. Instalação e configuração do Eclipse.
+    2. Seleção do Workspace.
+    3. Criação de projetos Java.
+    4. Criação de classes e utilização de pacotes.
+    5. Content Assist para preenchimento automático.
+    6. Execução de programas Java.
+    7. Identificação de erros de compilação e avisos.
+    8. Utilização da visualização Problems.
+    9. Depuração com breakpoints e Debug Perspective.
+    10. Geração automática de Getters, Setters, `hashCode()`, `equals()` e `toString()`.
+    11. Refatoração e renomeação de elementos do código.
+
+    O Eclipse possui muitos outros recursos que podem ser úteis principalmente durante o desenvolvimento de aplicações maiores.
+
+    Para aprofundar o conhecimento, a documentação recomenda consultar o Java Development User Guide.
+
+    ## 11. Referência
+
+    **Fonte:** Oracle — Learn Java
+
+    **Material:** Building a Java Application in the Eclipse IDE
+
+    **Contribuição:** Daniel Schmid, sob a licença UPL.
+
+    **Última atualização informada:** 22 de abril de 2024.
+
+    Oracle — Building a Java Application in the Eclipse IDE
+
+    ---
+
+    *Documentação pessoal de estudos — My-Studying-Java.*
+
+    **Observação:** esta anotação registra os recursos e conceitos apresentados no tutorial da Oracle. Não significa que todos eles já foram praticados ou dominados.

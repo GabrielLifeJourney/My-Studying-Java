@@ -1,0 +1,386 @@
+- **Launching Simple Source-Code Programs**
+
+    ## 🎯 Objetivo
+
+    Entender como executar programas Java diretamente a partir dos arquivos de código-fonte, sem precisar realizar manualmente a compilação antes da execução.
+
+    Ao final desta leitura, você deverá compreender:
+
+    - Como executar um arquivo `.java` diretamente.
+    - Como passar argumentos pela linha de comando.
+    - Como declarar várias classes no mesmo arquivo.
+    - Como executar programas com vários arquivos.
+    - A diferença entre classes do JDK e bibliotecas externas.
+    - Como funciona a execução de arquivos Java no formato shebang.
+
+    ---
+
+    ## 📚 Conceitos
+
+    ### 1. Execução direta de um arquivo-fonte
+
+    No JDK 11, o Java introduziu a capacidade de executar programas de código-fonte de arquivo único diretamente pelo inicializador `java`.
+
+    Isso permite executar o programa sem precisar compilar explicitamente o código-fonte.
+
+    O inicializador chama automaticamente o compilador e mantém o código compilado na memória.
+
+    **Exemplo:**
+
+    ```
+    java HelloWorld.java
+    ```
+
+    A primeira classe definida no arquivo precisa conter o método principal:
+
+    ```
+    public static void main(String[] args)
+    ```
+
+    ### 2. Passagem de argumentos
+
+    Os argumentos podem ser enviados pela linha de comando, assim como acontece com uma classe compilada normalmente.
+
+    Eles ficam disponíveis no array `args`.
+
+    **Exemplo:**
+
+    ```
+    public class HelloJava {
+        public static void main(String[] args) {
+            IO.println("Hello " + args[0]);
+        }
+    }
+    ```
+
+    Execução:
+
+    ```
+    java HelloJava.java World!
+    ```
+
+    Resultado esperado:
+
+    ```
+    Hello World!
+    ```
+
+    Nesse exemplo, `args[0]` recebe o argumento `World!`.
+
+    ### 3. Várias classes no mesmo arquivo
+
+    É possível declarar várias classes no mesmo arquivo de código-fonte.
+
+    Isso pode ser utilizado para fins de encapsulamento e organização de classes auxiliares.
+
+    **Exemplo:**
+
+    ```
+    public class MultipleClassesInSameFile {
+        public static void main(String[] args) {
+            IO.println(GenerateMessage.generateMessage());
+            IO.println(AnotherMessage.generateAnotherMessage());
+        }
+    }
+
+    class GenerateMessage {
+        static String generateMessage() {
+            return "Here is one message";
+        }
+    }
+
+    class AnotherMessage {
+        static String generateAnotherMessage() {
+            return "Here is another message";
+        }
+    }
+    ```
+
+    Execução:
+
+    ```
+    java MultipleClassesInSameFile.java
+    ```
+
+    Resultado:
+
+    ```
+    Here is one message
+    Here is another message
+    ```
+
+    ### 4. Execução de programas com vários arquivos
+
+    A partir do JDK 22, com a JEP 458 — Executar Programas de Código-Fonte com Múltiplos Arquivos — o inicializador `java` passou a conseguir localizar, compilar e carregar automaticamente programas com vários arquivos de código-fonte.
+
+    Para isso, a localização dos arquivos precisa corresponder à estrutura dos pacotes das classes importadas.
+
+    **Exemplo de organização:**
+
+    ```
+    projeto/
+    ├── Main.java
+    ├── model/
+    │   └── Person.java
+    └── service/
+        └── PersonService.java
+    ```
+
+    Classe principal:
+
+    ```
+    import model.Person;
+    import service.PersonService;
+
+    public class Main {
+        public static void main(String[] args) {
+            PersonService service = new PersonService();
+            Person person = service.createNewPerson();
+            IO.println(person.printName() + " has been created!");
+        }
+    }
+    ```
+
+    Execução:
+
+    ```
+    java Main.java
+    ```
+
+    O inicializador localizará as classes importadas nos diretórios correspondentes, compilando e executando os arquivos necessários.
+
+    ### 5. Classes do JDK e bibliotecas externas
+
+    Uma classe que faz parte do núcleo do JDK não precisa ser adicionada manualmente ao classpath.
+
+    A documentação apresenta como exemplos:
+
+    - `java.util.Scanner`
+    - `java.util.regex.MatchResult`
+
+    Essas classes podem ser utilizadas diretamente.
+
+    Entretanto, uma classe pertencente a uma biblioteca externa, como `RandomUtils`, do Apache Commons Lang, precisa ter sua biblioteca JAR adicionada ao classpath.
+
+    **Exemplo:**
+
+    ```
+    import org.apache.commons.lang3.RandomUtils;
+
+    public class ReferenceNonJDKClass {
+        public static void main(String[] args) {
+            IO.println(RandomUtils.nextInt());
+        }
+    }
+    ```
+
+    Execução:
+
+    ```
+    java -cp /path/to/commons-lang3-3.12.0.jar ReferenceNonJDKClass.java
+    ```
+
+    O argumento `-cp` informa o caminho da biblioteca necessária para executar o programa.
+
+    ### 6. Execução como arquivo Shebang
+
+    Em sistemas operacionais do tipo Unix, um programa Java de arquivo único também pode ser executado como um script.
+
+    Para isso, utiliza-se o formato shebang.
+
+    A primeira linha do arquivo indica o caminho do inicializador Java e a versão da linguagem.
+
+    **Exemplo:**
+
+    ```
+    #!/path/to/your/bin/java --source 27
+
+    public class HelloJava {
+        public static void main(String[] args) {
+            IO.println("Hello " + args[0]);
+        }
+    }
+    ```
+
+    Para utilizar esse formato:
+
+    - O arquivo não pode possuir a extensão `.java`.
+    - É necessário conceder permissão de execução com `chmod +x`.
+    - O arquivo pode ser executado diretamente pelo caminho.
+
+    **Exemplo de execução:**
+
+    ```
+    ./HelloJava Maria
+    ```
+
+    Se nenhum argumento for informado, o acesso a `args[0]` poderá provocar uma `ArrayIndexOutOfBoundsException`.
+
+    ---
+
+    ## 🧠 O que memorizar
+
+    - JDK 11: introduziu a execução direta de programas de arquivo único.
+    - JDK 22: ampliou o recurso para programas com vários arquivos.
+    - `java`: inicializador responsável por executar o programa.
+    - `args`: array que recebe os argumentos enviados pela linha de comando.
+    - `main`: método principal utilizado como ponto de entrada nos exemplos.
+    - `cp`: argumento utilizado para informar bibliotecas externas no classpath.
+    - `.jar`: formato de arquivo utilizado para distribuir bibliotecas Java.
+    - Shebang: permite executar arquivos Java como scripts em sistemas Unix.
+
+    ### Linha geral
+
+    ```
+    Arquivo Java
+         ↓
+    Inicializador java
+         ↓
+    Compilação automática
+         ↓
+    Código compilado mantido na memória
+         ↓
+    Execução do programa
+    ```
+
+    ---
+
+    ## 💻 Exemplos
+
+    ### Exemplo 1 — Executar diretamente
+
+    ```
+    java HelloWorld.java
+    ```
+
+    ### Exemplo 2 — Passar argumentos
+
+    ```
+    java HelloJava.java World!
+    ```
+
+    ### Exemplo 3 — Executar vários arquivos
+
+    ```
+    java Main.java
+    ```
+
+    ### Exemplo 4 — Adicionar biblioteca externa
+
+    ```
+    java -cp /path/to/commons-lang3-3.12.0.jar ReferenceNonJDKClass.java
+    ```
+
+    ---
+
+    ## 🔎 Explicação
+
+    ### 1. Por que executar diretamente um arquivo Java?
+
+    Antes desse recurso, era necessário realizar separadamente as etapas de compilação e execução.
+
+    Com a execução direta, o inicializador `java` realiza automaticamente a compilação e executa o programa.
+
+    Isso facilita o aprendizado da linguagem e a exploração de recursos da API Java.
+
+    ### 2. Qual é a diferença entre arquivo único e vários arquivos?
+
+    No arquivo único, podemos manter o programa principal e outras classes auxiliares no mesmo arquivo.
+
+    Com vários arquivos, podemos separar as classes em diferentes diretórios e pacotes, mantendo a organização do projeto.
+
+    A partir do JDK 22, o inicializador consegue localizar automaticamente os arquivos relacionados, desde que a estrutura de diretórios corresponda aos pacotes importados.
+
+    ### 3. Por que existem bibliotecas externas?
+
+    O JDK possui suas próprias classes, mas existem bibliotecas desenvolvidas fora do núcleo do Java.
+
+    Quando utilizamos uma dessas bibliotecas, precisamos disponibilizá-la para o programa durante a inicialização.
+
+    É nesse contexto que utilizamos o argumento `-cp`.
+
+    ---
+
+    ## ⚠️ Pontos de atenção
+
+    - A execução direta não elimina a compilação. O inicializador realiza esse processo automaticamente.
+    - O JDK 11 introduziu a execução de arquivos únicos.
+    - O JDK 22 introduziu o suporte à execução de programas com vários arquivos.
+    - O acesso a `args[0]` exige que exista um primeiro argumento.
+    - A estrutura dos diretórios precisa corresponder aos pacotes importados.
+    - Bibliotecas externas precisam estar disponíveis no classpath.
+    - O exemplo shebang é direcionado a sistemas operacionais do tipo Unix.
+    - Arquivos executados com shebang precisam de permissão de execução.
+
+    ---
+
+    ## 📝 Resumo
+
+    O Java permite executar programas diretamente a partir dos arquivos de código-fonte, utilizando o inicializador `java`.
+
+    Esse recurso foi introduzido no JDK 11 para programas de arquivo único e ampliado no JDK 22 para programas com vários arquivos.
+
+    A documentação também apresenta a passagem de argumentos pela linha de comando, a declaração de várias classes no mesmo arquivo, a utilização de bibliotecas externas por meio do classpath e a execução de arquivos no formato shebang.
+
+    Esses recursos facilitam a execução de programas e permitem uma transição gradual de exemplos simples para projetos com vários arquivos.
+
+    ---
+
+    ## 🏋️ Prática
+
+    Resolva sem consultar os exemplos. Primeiro raciocine e depois execute os comandos.
+
+    ### Exercício 1 — Execução direta
+
+    1. Qual comando permite executar diretamente um arquivo chamado `HelloWorld.java`?
+    2. O que o inicializador `java` realiza automaticamente?
+    3. Em qual versão do JDK esse recurso foi introduzido?
+
+    ### Exercício 2 — Passagem de argumentos
+
+    Considere o comando:
+
+    ```
+    java HelloJava.java World!
+    ```
+
+    1. Qual argumento está sendo enviado?
+    2. Em qual posição do array `args` ele fica disponível?
+    3. O que pode acontecer se o programa tentar acessar `args[0]` sem receber nenhum argumento?
+
+    ### Exercício 3 — Várias classes
+
+    1. É possível declarar várias classes no mesmo arquivo Java?
+    2. Qual é uma das finalidades dessa organização?
+    3. Qual é a diferença entre um programa com arquivo único e um programa com vários arquivos?
+
+    ### Exercício 4 — JDK e bibliotecas externas
+
+    1. Uma classe pertencente ao núcleo do JDK precisa ser adicionada manualmente ao classpath?
+    2. Por que uma biblioteca externa precisa ser informada?
+    3. Qual é a função do argumento `cp`?
+
+    ### Exercício 5 — Técnica de Feynman
+
+    Explique com suas próprias palavras, como se estivesse ensinando uma pessoa iniciante:
+
+    > Como o Java consegue executar um arquivo `.java` sem que você precise chamar manualmente o compilador antes?
+    >
+
+    ---
+
+    ## 🔄 Revisão
+
+    Responda sem consultar os exemplos:
+
+    1. O que significa executar um programa diretamente pelo código-fonte?
+    2. Qual foi a novidade introduzida no JDK 11?
+    3. O que mudou com o JDK 22?
+    4. Para que serve o array `args`?
+    5. É possível declarar várias classes no mesmo arquivo?
+    6. Por que a estrutura de pacotes é importante em programas com vários arquivos?
+    7. Qual é a diferença entre classes do JDK e classes de bibliotecas externas?
+    8. Para que serve o argumento `cp`?
+    9. Em quais sistemas operacionais a documentação apresenta a execução com shebang?
+
+    ---
