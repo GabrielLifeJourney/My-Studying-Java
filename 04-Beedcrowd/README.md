@@ -1,6 +1,6 @@
 # Beecrowd - Créditos e Fontes de Estudo
 
-![Beecrowd](Assets/IMG/beecrowd-cover.png)
+![Beecrowd](assets/img/beecrowd-cover.png)
 
 ## 1. Sobre a fonte
 

@@ -1,6 +1,6 @@
 # Exercism — Créditos e Fontes de Estudo
 
-![Exercism](Assets/IMG/exercism-cover.png)
+![Exercism](assets/img/exercism-cover.png)
 
 ## 1. Sobre a fonte
 

@@ -1,6 +1,6 @@
 # Dev.java — Créditos e fontes de estudo
 
-![Dev.java](Assets/IMG/devjava-cover.png)
+![DevJava](assets/img/devjava-cover.png)
 
 ## 1. Sobre a fonte
 

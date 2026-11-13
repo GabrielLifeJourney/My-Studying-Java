@@ -1,6 +1,6 @@
 # DevDojo — Créditos e Fontes de Estudo
 
-![DevDojo](Assets/IMG/devdojo-cover.png)
+![DevDojo](assets/img/devdojo-cover.png)
 
 ## 1. Sobre a fonte
 
