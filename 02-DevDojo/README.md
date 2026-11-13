@@ -10,13 +10,14 @@ Esta pasta reúne os registros pessoais de estudo utilizando como referência o 
 
 ## 2. Créditos
 
-- **Plataforma:** DevDojo / DevDojo Academy
-- **Instrutor e criador do curso:** William Suane
-- **Edição dos vídeos:** Wildnei Suane
-- **Curso:** Maratona Java — Virado no Jiraya
+| Informação | Referência |
+|---|---|
+| Plataforma | DevDojo / DevDojo Academy |
+| Instrutor e criador do curso | William Suane |
+| Edição dos vídeos | Wildnei Suane |
+| Curso | Maratona Java — Virado no Jiraya |
 
-Todos os créditos do conteúdo original pertencem aos seus respectivos responsáveis.
-
+**Direitos e atribuições:** todos os créditos do conteúdo original pertencem aos seus respectivos responsáveis. Este repositório contém registros, estudos e códigos desenvolvidos por mim, com indicação das fontes utilizadas.
 ## 3. Referências
 
 - [Site oficial — DevDojo Academy](https://devdojo.academy/)

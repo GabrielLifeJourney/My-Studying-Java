@@ -16,7 +16,7 @@ Este espaço reúne os materiais utilizados como referência durante minha jorna
 | Fonte | Portal oficial Java |
 | Site | [dev.java](https://dev.java/) |
 | Área de estudo | Desenvolvimento Java |
-| Estudante | Kelvyn Gabriel |
+| Estudante | Gabriel Silva |
 
 **Direitos e atribuições:** os conteúdos originais e materiais disponibilizados pertencem aos seus respectivos autores e responsáveis. Este repositório contém anotações, estudos e códigos desenvolvidos por mim, com indicação das fontes utilizadas.
 

@@ -10,11 +10,15 @@ A plataforma organiza os problemas em diferentes categorias, incluindo Beginner 
 
 ## 2. Créditos
 
-- **Plataforma:** beecrowd.
-- **Ambiente de prática:** beecrowd.
-- **Autores individuais dos problemas:** não identificados nesta documentação.
-- **Instrutor:** não informado.
+| Informação | Referência |
+|---|---|
+| Plataforma | beecrowd |
+| Fonte | Plataforma de programação competitiva e avaliação automática de código |
+| Ambiente de prática | beecrowd |
+| Autores dos problemas | Autores individuais não identificados nesta documentação |
+| Instrutor | Não informado |
 
+**Direitos e atribuições:** os problemas e conteúdos originais pertencem aos seus respectivos autores e responsáveis. Este repositório contém soluções e registros de estudos desenvolvidos por mim, com indicação das fontes utilizadas.
 ## 3. Referências
 
 - [Site oficial do beecrowd](https://beecrowd.com/pt/)

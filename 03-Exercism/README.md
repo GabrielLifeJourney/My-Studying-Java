@@ -12,8 +12,14 @@ A trilha Java é dedicada à prática e ao desenvolvimento de habilidades na lin
 
 ## 2. Créditos
 
-- **Exercism:** organização responsável pela plataforma e pela disponibilização das trilhas de aprendizagem.
-- **Comunidade Exercism:** colaboradores, mantenedores e participantes envolvidos na construção e manutenção da plataforma.
+| Informação | Referência |
+|---|---|
+| Plataforma | Exercism |
+| Organização | Exercism |
+| Comunidade | Colaboradores, mantenedores e participantes da plataforma |
+| Área de estudo | Desenvolvimento Java |
+
+**Direitos e atribuições:** os conteúdos originais, exercícios e materiais disponibilizados pertencem aos seus respectivos autores e responsáveis. Este repositório contém registros, estudos e soluções desenvolvidos por mim, com indicação das fontes utilizadas.
 
 ## 3. Referências
 
