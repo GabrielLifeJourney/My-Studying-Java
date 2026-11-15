@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/03-Exercism/exercicios/001-Olá, Mundo" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/03-Exercism/exercicios/002-Cozinhe sua lasanha" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/01-DevJava/01-Your First Steps in Java/01-Your-first-Java-code/02-Launching Simple Source-Code Programs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/00-MaratonaJavaViradonoJiraya/007-Conhecendo a IDE IntelliJ Community" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
