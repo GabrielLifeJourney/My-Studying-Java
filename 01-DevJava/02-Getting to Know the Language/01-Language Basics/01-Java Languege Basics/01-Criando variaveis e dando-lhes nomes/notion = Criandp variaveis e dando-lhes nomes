@@ -1,0 +1,401 @@
+Minha notações do notion
+- foco sempre criar nomes com formato CamelCase
+
+- Criando variaveis e dando-lhes nomes
+
+    # Java — Variáveis e nomeação
+
+    **Fonte:** Oracle — Learn Java
+
+    **Assunto:** Noções básicas da linguagem Java
+
+    **Lição:** Creating Variables and Naming Them (Criando variáveis e dando-lhes nomes)
+
+    **Última atualização da fonte:** 23 de setembro de 2021
+
+    ---
+
+    ## 🎯 1. Objetivo
+
+    Compreender o conceito de variáveis em Java, identificar os diferentes tipos de variáveis e aprender as regras e convenções utilizadas para nomeá-las corretamente.
+
+    Ao terminar esta aula, você deverá conseguir:
+
+    - Diferenciar campos e variáveis.
+    - Identificar variáveis de instância.
+    - Identificar variáveis de classe (`static`).
+    - Compreender variáveis locais.
+    - Identificar parâmetros.
+    - Aplicar convenções de nomenclatura Java.
+
+    ## 📚 2. Conceitos
+
+    ### 2.1 O que são variáveis?
+
+    Variáveis são elementos utilizados para armazenar valores durante a execução de um programa.
+
+    Exemplo:
+
+    ```
+    int cadence = 0;
+    int speed = 0;
+    int gear = 1;
+    ```
+
+    Nesse exemplo:
+
+    - `int`: tipo de dado.
+    - `cadence`: nome da variável.
+    - `0`: valor armazenado.
+    - `=`: operador de atribuição.
+
+    Uma variável possui um nome, um tipo e um valor.
+
+    ### 2.2 Diferença entre campo e variável
+
+    Na documentação Java, existe uma distinção:
+
+    **Campo (Field):** variável declarada dentro de uma classe, mas fora dos métodos.
+
+    **Variável:** termo mais abrangente, utilizado para representar campos, variáveis locais e parâmetros.
+
+    ### 2.3 Tipos de variáveis em Java
+
+    A documentação apresenta quatro categorias.
+
+    **1. Variáveis de instância (Instance Variables)**
+
+    São campos declarados sem a palavra-chave `static`.
+
+    Cada objeto possui seus próprios valores.
+
+    Exemplo:
+
+    ```
+    class Bicycle {
+        int speed;
+    }
+    ```
+
+    Se criarmos duas bicicletas, cada uma poderá possuir uma velocidade diferente.
+
+    **2. Variáveis de classe (Class Variables)**
+
+    São campos declarados utilizando a palavra-chave `static`.
+
+    Existe apenas uma cópia dessa variável, compartilhada entre as instâncias da classe.
+
+    Exemplo:
+
+    ```
+    class Bicycle {
+        static int numGears = 6;
+    }
+    ```
+
+    Nesse exemplo, `numGears` pertence à classe e representa um valor compartilhado pelas bicicletas.
+
+    Também podemos utilizar `final` para indicar que o valor não poderá ser alterado após sua inicialização.
+
+    ```
+    static final int NUM_GEARS = 6;
+    ```
+
+    **3. Variáveis locais (Local Variables)**
+
+    São variáveis declaradas dentro de um método.
+
+    Elas são utilizadas para armazenar informações temporárias e só podem ser acessadas dentro do contexto em que foram declaradas.
+
+    Exemplo:
+
+    ```
+    public void calculate() {
+        int count = 0;
+    }
+    ```
+
+    A variável `count` existe dentro do método `calculate()`.
+
+    **4. Parâmetros (Parameters)**
+
+    São variáveis utilizadas para receber informações quando um método é chamado.
+
+    Exemplo:
+
+    ```
+    public static void main(String[] args) {
+
+    }
+    ```
+
+    Nesse exemplo, `args` é um parâmetro do método `main`.
+
+    Parâmetros são classificados como variáveis, não como campos.
+
+    ---
+
+    ## 🧠 3. O que memorizar
+
+    | Conceito | Significado |
+    | --- | --- |
+    | Field | Campo declarado na classe |
+    | Instance Variable | Campo específico de cada objeto |
+    | `static` | Campo compartilhado pela classe |
+    | Local Variable | Variável declarada dentro de um método |
+    | Parameter | Variável que recebe informações de um método |
+    | `final` | Impede alterações posteriores no valor da variável |
+
+    **Distinção fundamental:**
+
+    - Instância: cada objeto possui seu próprio valor.
+    - Classe (`static`): valor compartilhado entre os objetos.
+    - Local: existe dentro do método.
+    - Parâmetro: recebe informações de uma chamada.
+
+    ---
+
+    ## 💻 4. Exemplos de código
+
+    ### Exemplo 1 — Variáveis de instância
+
+    ```
+    class Bicycle {
+
+        int speed;
+        int gear;
+
+    }
+    ```
+
+    ### Exemplo 2 — Variável de classe
+
+    ```
+    class Bicycle {
+
+        static int numGears = 6;
+
+    }
+    ```
+
+    ### Exemplo 3 — Variável local
+
+    ```
+    class Calculator {
+
+        public void calculate() {
+
+            int result = 10;
+
+        }
+
+    }
+    ```
+
+    ### Exemplo 4 — Parâmetro
+
+    ```
+    class Greeting {
+
+        public void sayHello(String name) {
+
+            System.out.println(name);
+
+        }
+
+    }
+    ```
+
+    ---
+
+    ## 🔎 5. Explicação dos códigos
+
+    **Exemplo 1:**
+
+    `speed` e `gear` são campos de instância. Cada objeto da classe `Bicycle` possui seus próprios valores.
+
+    **Exemplo 2:**
+
+    `numGears` utiliza `static`. Isso significa que a variável pertence à classe e não existe uma cópia independente para cada objeto.
+
+    **Exemplo 3:**
+
+    `result` é uma variável local porque foi declarada dentro do método `calculate()`.
+
+    **Exemplo 4:**
+
+    `name` é um parâmetro. Ele recebe um valor quando o método `sayHello()` é chamado.
+
+    ---
+
+    ## ⚠️ 6. Pontos de atenção
+
+    ### Regras para nomear variáveis
+
+    A documentação apresenta as seguintes regras:
+
+    1. Java diferencia letras maiúsculas e minúsculas.
+    2. O nome deve começar com uma letra, `$` ou `_`.
+    3. Os caracteres seguintes podem conter letras, números, `$` e `_`.
+    4. Espaços não são permitidos.
+    5. Palavras reservadas não podem ser utilizadas como identificadores.
+    6. Prefira nomes completos e descritivos.
+    7. Evite abreviações difíceis de compreender.
+
+    ### Convenções de nomenclatura
+
+    **Uma palavra:** letras minúsculas.
+
+    ```
+    int speed;
+    int gear;
+    ```
+
+    **Mais de uma palavra:** utilize camelCase.
+
+    ```
+    int currentSpeed;
+    int gearRatio;
+    int numberOfGears;
+    ```
+
+    **Constantes:** utilize letras maiúsculas e separe as palavras com `_`.
+
+    ```
+    static final int NUM_GEARS = 6;
+    ```
+
+    Convenção importante:
+
+    - Variáveis comuns: `camelCase`.
+    - Constantes: `UPPER_SNAKE_CASE`.
+    - Evite iniciar nomes com `$` ou `_`.
+
+    ### Atenção à tradução da fonte
+
+    O texto fornecido apresenta o exemplo `local int count = 0`, mas também afirma que não existe uma palavra-chave específica para declarar variáveis locais.
+
+    O exemplo correto em Java é:
+
+    ```
+    int count = 0;
+    ```
+
+    A palavra `local` não deve ser escrita na declaração.
+
+    ---
+
+    ## 📝 7. Resumo
+
+    Nesta aula, aprendemos que Java possui quatro categorias importantes de variáveis:
+
+    - Variáveis de instância: pertencem a cada objeto.
+    - Variáveis de classe: são compartilhadas por todos os objetos da classe.
+    - Variáveis locais: são declaradas dentro de métodos.
+    - Parâmetros: recebem informações utilizadas pelos métodos.
+
+    Também aprendemos que a nomenclatura das variáveis segue convenções que tornam o código mais organizado, legível e fácil de manter.
+
+    O padrão mais importante para memorizar é o `camelCase` para variáveis comuns e `UPPER_SNAKE_CASE` para constantes.
+
+    ---
+
+    ## 🏋️ 8. Prática deliberada
+
+    **Não consulte a solução antes de tentar.** Escreva os códigos no IntelliJ IDEA.
+
+    ### Exercício 1 — Identificação
+
+    Observe:
+
+    ```
+    class Carro {
+
+        int velocidade;
+        static int quantidade = 4;
+
+        public void acelerar(int valor) {
+
+            int resultado = velocidade + valor;
+
+        }
+
+    }
+    ```
+
+    Identifique:
+
+    1. Qual é a variável de instância?
+    2. Qual é a variável de classe?
+    3. Qual é o parâmetro?
+    4. Qual é a variável local?
+
+    ### Exercício 2 — Nomenclatura
+
+    Identifique quais nomes seguem as convenções apresentadas pela documentação:
+
+    - `currentSpeed`
+    - `CurrentSpeed`
+    - `current_speed`
+    - `NUM_GEARS`
+    - `numberOfGears`
+    - `number of gears`
+
+    Explique o motivo.
+
+    ### Exercício 3 — Construção
+
+    Crie uma classe chamada `Bicycle` contendo:
+
+    1. Uma variável de instância chamada `speed`.
+    2. Uma variável de instância chamada `gear`.
+    3. Uma variável de classe chamada `numberOfBicycles`.
+    4. Uma constante chamada `MAX_SPEED`.
+    5. Um método que receba um parâmetro chamado `increment`.
+    6. Uma variável local chamada `newSpeed`.
+
+    Não copie um código pronto. Construa a classe utilizando o que aprendeu.
+
+    ---
+
+    ## 🔄 9. Revisão ativa
+
+    Responda sem consultar o material:
+
+    1. Qual é a diferença entre uma variável de instância e uma variável de classe?
+    2. O que a palavra-chave `static` representa?
+    3. Onde uma variável local é declarada?
+    4. O que é um parâmetro?
+    5. Qual é a diferença entre `currentSpeed` e `NUM_GEARS`?
+    6. Por que devemos utilizar nomes descritivos?
+
+    ---
+
+    ## ✅ 10. Checklist de aprendizagem
+
+    - [ ]Compreendi o conceito de variável.
+
+    - [ ]Diferencio campos e variáveis.
+
+    - [ ]Compreendi variáveis de instância.
+
+    - [ ]Compreendi variáveis de classe (`static`).
+
+    - [ ]Compreendi variáveis locais.
+
+    - [ ]Compreendi parâmetros.
+
+    - [ ]Conheço as regras de nomenclatura.
+
+    - [ ]  Sei utilizar camelCase.
+
+    - [ ]Sei nomear constantes.
+
+    - [ ]Resolvi os três exercícios.
+
+    - [ ]Consigo explicar os conceitos sem consultar a documentação.
+
+
+    ---
+
+    **Documentação pessoal de estudos — My-Studying-Java.**
