@@ -8,7 +8,7 @@ short   campoShort   = 32000;              // 16 bits, -32.768 a 32.767
 int     campoInt     = 2_000_000_000;      // 32 bits, ~ ±2,1 bilhões
 long    campoLong    = 9_000_000_000L;     // 64 bits, sufixo L obrigatório
 
-// Ponto flutuante
+// Ponto flutuante / decimas
 float   campoFloat   = 3.14f;              // 32 bits, sufixo f obrigatório
 double  campoDouble  = 3.141592653589793;  // 64 bits, padrão para decimais
 
