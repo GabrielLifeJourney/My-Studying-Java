@@ -9,6 +9,13 @@
       <sourceFolder url="file://$MODULE_DIR$/03-Exercism/exercicios/001-Olá, Mundo" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/03-Exercism/exercicios/002-Cozinhe sua lasanha" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 000 — Maratona Java Virado no Jiraya - Bem-vindo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 001 — O que esperar do curso" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 002 — Como Java Funciona" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 003 — Fazendo o download da JDK 15" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 004 — Configurando variáveis de ambiente" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 005 — Executando compilação manualmente" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 006 — Download da IDE IntelliJ Community" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 007 — Conhecendo a IDE IntelliJ Community" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
