@@ -16,6 +16,8 @@
       <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 005 — Executando compilação manualmente" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 006 — Download da IDE IntelliJ Community" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 007 — Conhecendo a IDE IntelliJ Community" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 008 — Organizando o código em pacotes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/☕ Aula 009 — Comentários" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
