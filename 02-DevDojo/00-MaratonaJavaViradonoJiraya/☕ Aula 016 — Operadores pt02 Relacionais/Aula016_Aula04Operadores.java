@@ -1,6 +1,7 @@
 public class Aula016_Aula04Operadores {
     public static void main(String[] args) {
         /*
+
         Operador Significado
         ==	igual a
         !=	diferente de
