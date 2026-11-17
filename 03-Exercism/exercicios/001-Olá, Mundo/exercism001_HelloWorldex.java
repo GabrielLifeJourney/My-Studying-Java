@@ -1,4 +1,4 @@
-public class HelloWorldex {
+public class exercism001_HelloWorldex {
     static void main(String[] args) {
         System.out.println("Hello, World!");
     }

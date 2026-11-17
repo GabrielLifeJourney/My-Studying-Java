@@ -1,4 +1,4 @@
-public class CozinheSuaLasanha {
+public class exercism002_CozinheSuaLasanha {
     static void main() {
         /*
 
