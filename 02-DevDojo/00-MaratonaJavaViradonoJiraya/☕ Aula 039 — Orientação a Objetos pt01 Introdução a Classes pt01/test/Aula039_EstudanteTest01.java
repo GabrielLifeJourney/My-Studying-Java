@@ -1,10 +1,10 @@
 package test;
 
-import dominio.Estudante;
+import dominio.Aula039_Estudante;
 
-public class EstudanteTest01 {
+public class Aula039_EstudanteTest01 {
     public static void main(String[] args) {
-        Estudante estudante = new Estudante();
+        Aula039_Estudante estudante = new Aula039_Estudante();
         estudante.nome = "Luffy";
         estudante.idade = 21;
         estudante.sexo = 'M';
