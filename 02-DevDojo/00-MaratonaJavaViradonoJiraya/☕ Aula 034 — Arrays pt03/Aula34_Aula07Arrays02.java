@@ -1,4 +1,4 @@
-public class Aula34_Aula07Arrays03 {
+public class Aula34_Aula07Arrays02 {
     public static void main(String[] args) {
         // padrao de inicializacao
         // byte,short,int,long,float e double 0
