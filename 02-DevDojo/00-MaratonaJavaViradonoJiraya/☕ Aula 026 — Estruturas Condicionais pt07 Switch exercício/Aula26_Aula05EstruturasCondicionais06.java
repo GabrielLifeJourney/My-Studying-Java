@@ -1,4 +1,4 @@
-public class Aula25_Aula05EstruturasCondicionais06 {
+public class Aula26_Aula05EstruturasCondicionais06 {
     public static void main(String[] args) {
         // Ultilizando witch e dados os valores de 1 a 7, imprima se é dia últil ou final de semana.
         // Considerando 1 como Domingo.
