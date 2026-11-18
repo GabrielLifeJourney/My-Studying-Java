@@ -3,7 +3,7 @@ public class Aula36_Aula08ArraysMultidimensionais01 {
         // 1,2,3,4,5 meses.
         // 31,28,31,30 dias
 
-        //sintaxe correta array de 3x3 dimenções
+        //sintaxe correta
         int[][] dias = new int[3][3];
         dias [0][0] = 31;
         dias [0][1] = 28;
