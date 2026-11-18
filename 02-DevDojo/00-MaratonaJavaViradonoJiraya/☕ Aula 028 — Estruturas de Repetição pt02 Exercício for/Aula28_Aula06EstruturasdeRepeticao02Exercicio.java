@@ -1,4 +1,4 @@
-public class Aula27_Aula06EstruturasdeRepeticao02Exercicio {
+public class Aula28_Aula06EstruturasdeRepeticao02Exercicio {
     public static void main(String[] args) {
         // Imprima todos os numeros pares de 0 até 1000000.
 
