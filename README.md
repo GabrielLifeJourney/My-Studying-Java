@@ -1,3 +1,5 @@
+![Banner](/assets/img/banner.png)
+
 # My-Studying-Java
 
 **Minha jornada de aprendizado, prática e evolução em Java.**
