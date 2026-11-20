@@ -1,10 +1,10 @@
 package test;
 
-import dominio.Aula047_Calculadora;
+import dominio.Aula048_Calculadora;
 
 public class Aula047_CalculadoraTest03 {
     public static void main(String[] args){
-        Aula047_Calculadora calculadora = new Aula047_Calculadora();
+        Aula048_Calculadora calculadora = new Aula048_Calculadora();
         double resul = calculadora.divideDoisNumeros(20,0);
         double resul2 = calculadora.divideDoisNumeros2(20,8);
 
