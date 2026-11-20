@@ -1,10 +1,10 @@
 package test;
 
-import dominio.Aula054_Pessoa;
+import dominio.Aula055_Pessoa;
 
 public class Aula054_PessoaTest01 {
     public static void main(String[] args) {
-        Aula054_Pessoa pessoa = new Aula054_Pessoa();
+        Aula055_Pessoa pessoa = new Aula055_Pessoa();
         pessoa.setNome("Jiraya");
         pessoa.setIdade(70);
 
