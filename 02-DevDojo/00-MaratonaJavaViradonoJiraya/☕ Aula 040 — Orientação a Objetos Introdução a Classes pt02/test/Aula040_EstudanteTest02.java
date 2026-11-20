@@ -1,11 +1,11 @@
 package test;
 
-import dominio.Aula041_Estudante;
+import dominio.Aula049_Estudante;
 
 public class Aula040_EstudanteTest02 {
     public static void main(String[] args) {
-        Aula041_Estudante estudante = new Aula041_Estudante();
-        Aula041_Estudante estudante2 = new Aula041_Estudante();
+        Aula049_Estudante estudante = new Aula049_Estudante();
+        Aula049_Estudante estudante2 = new Aula049_Estudante();
 
         estudante.nome = "Sanji";
         System.out.println(estudante.nome);
