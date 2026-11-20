@@ -1,7 +1,7 @@
 package dominio;
 
 public class Aula049_ImpressoraEstudante {
-    public void imprime(Aula049_Estudante estudante){
+    public void imprime(Aula050_Estudante estudante){
         System.out.println("\n+++++++++++\n");
 
         System.out.println(estudante.nome);
