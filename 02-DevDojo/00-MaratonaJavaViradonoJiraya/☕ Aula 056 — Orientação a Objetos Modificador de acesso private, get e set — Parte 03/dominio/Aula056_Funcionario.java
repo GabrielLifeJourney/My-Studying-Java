@@ -13,7 +13,8 @@ public class Aula056_Funcionario {
         if (salarios == null) {
             return;
         }
-        for (double salario : salarios) {       System.out.println(salario + " ");
+        for (double salario : salarios) {
+            System.out.println(salario+ " ");
         }
         imprimeMediaSalario();
     }
