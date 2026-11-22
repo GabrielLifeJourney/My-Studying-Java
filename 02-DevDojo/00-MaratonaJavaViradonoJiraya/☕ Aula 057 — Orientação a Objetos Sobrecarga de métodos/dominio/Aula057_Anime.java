@@ -7,8 +7,8 @@ public class Aula057_Anime {
     private String genero;
 
     public void imprime(){
-        System.out.println(this.tipo);
         System.out.println(this.nome);
+        System.out.println(this.tipo);
         System.out.println(this.epsodios);
         System.out.println(this.genero);
     }
