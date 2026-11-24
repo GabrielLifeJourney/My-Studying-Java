@@ -9,9 +9,9 @@ public class Aula070_Seminario {
         this.titulo = titulo;
     }
 
-    public Aula070_Seminario(String titulo, Aula070_Aluno[] alunos) {
+    public Aula070_Seminario(String titulo, Aula070_Local local){
         this.titulo = titulo;
-        this.alunos = alunos;
+        this.local = local;
     }
 
     public Aula070_Seminario(String titulo, Aula070_Aluno[] alunos, Aula070_Local local) {
