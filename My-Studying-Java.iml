@@ -100,6 +100,7 @@
       <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/00-MaratonaJavaViradonoJiraya/☕ Aula 073 — Orientação a Objetos Herança — Parte03 protected" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/00-MaratonaJavaViradonoJiraya/☕ Aula 074 — Orientação a Objetos Herança — Parte04 Construtores" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/00-MaratonaJavaViradonoJiraya/☕ Aula 075 — Orientação a Objetos Herança — Parte05 Sequência de inicialização" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-DevDojo/00-MaratonaJavaViradonoJiraya/☕ Aula 076 — Orientação a Objetos — Sobrescrita do método toString" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
